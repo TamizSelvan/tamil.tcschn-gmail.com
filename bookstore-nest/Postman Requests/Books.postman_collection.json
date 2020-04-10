@@ -1,0 +1,153 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Books",
+		"_postman_id": "01a2f929-5449-ba47-32d9-7ca7bbe8c373",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/books/",
+			"request": {
+				"url": "http://localhost:3000/books/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"postman.clearGlobalVariable(\"variable_key\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:3000/books",
+				"method": "POST",
+				"header": [
+					{
+						"key": "ID",
+						"value": "3",
+						"description": ""
+					},
+					{
+						"key": "title",
+						"value": "help",
+						"description": ""
+					},
+					{
+						"key": "description",
+						"value": "red",
+						"description": ""
+					},
+					{
+						"key": "author",
+						"value": "red",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ID\": 5,\n    \"title\": \"Unexpected token \\\" in JSON at position 0\",\n    \"description\": \"Bad Request\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/books?ID=3",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/books?ID=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "3",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/books?bookID=1",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/books?bookID=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "bookID",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"ID\": 3,\n        \"title\": \"Wings of fore\",\n        \"description\": \"APJ\"\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/books/1",
+			"request": {
+				"url": "http://localhost:3000/books/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Stores",
+		"_postman_id": "52ab968f-6f07-a892-f6d6-5206c6d21666",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/store",
+			"request": {
+				"url": "http://localhost:3000/store",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store/1",
+			"request": {
+				"url": "http://localhost:3000/store/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store",
+			"request": {
+				"url": "http://localhost:3000/store",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"Ajay Stores\",\n    \"city\": \"Mumbai\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store",
+			"request": {
+				"url": "http://localhost:3000/store",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"name\": \"Changed Stores\",\n    \"city\": \"Guargon\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/store?ID=3",
+			"request": {
+				"url": {
+					"raw": "http://localhost:3000/store?ID=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "3",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"name\": \"Changed Stores\",\n    \"city\": \"Guargon\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
