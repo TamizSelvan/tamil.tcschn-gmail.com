@@ -63,6 +63,28 @@ deleteBook(bookId) : Promise<any>{
     )
 }
 
+updateBook(book :CreateBookDTO) : Promise<any>{
+    return new Promise(
+        resolve=>{
+
+            let Index = this.books.findIndex(bk=> bk.ID==book.ID);
+            if(Index <0){
+                throw new HttpException('Book Not Found', 404);
+            }
+
+            const bk=this.books.find(b=>b.ID==book.ID);
+            bk.title= book.title;
+            bk.description=book.description;
+
+            this.books.splice(1,Index);
+            this.books.push(bk);
+
+            resolve(this.books);
+
+        }
+    )
+}
+
 
 
 }
