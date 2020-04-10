@@ -34,7 +34,7 @@ addBook(bs: CreateBookDTO): Promise<any> {
     return new Promise(resolve => {
 
         if (!bs.ID) {
-            throw new HttpException('Book Not Exists',404);
+            throw new HttpException('Book Details Required',404);
         }
         else{
             // const bookn = { ID: bs.ID, title: 'Wings', description: 'APJ' };
@@ -56,7 +56,7 @@ deleteBook(bookId) : Promise<any>{
                 throw new HttpException('Book Not Found', 404);
             }
 
-            this.books.splice(1,Index);
+            this.books.splice(Index,1);
             resolve(this.books);
 
         }
@@ -76,7 +76,7 @@ updateBook(book :CreateBookDTO) : Promise<any>{
             bk.title= book.title;
             bk.description=book.description;
 
-            this.books.splice(1,Index);
+            this.books.splice(Index,1);
             this.books.push(bk);
 
             resolve(this.books);
