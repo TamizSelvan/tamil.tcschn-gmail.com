@@ -1,0 +1,35 @@
+ public static string Decrypt(string EncryptedText)
+        {
+            Byte[] outputBytes = Enumerable.Range(0, EncryptedText.Length)
+                                 .Where(x => x % 2 == 0)
+                                 .Select(x => Convert.ToByte(EncryptedText.Substring(x, 2), 16))
+                                 .ToArray();
+
+            string plaintext = string.Empty;
+            Byte[] keyAndIvBytes = UTF8Encoding.UTF8.GetBytes("tR7nR6wZHGjYMCuV");
+            RijndaelManaged algorithm = new RijndaelManaged
+            {
+                Padding = PaddingMode.PKCS7,
+                Mode = CipherMode.CBC,
+                KeySize = 128,
+                BlockSize = 128
+            };
+
+            using (MemoryStream memoryStream = new MemoryStream(outputBytes))
+            {
+                using (CryptoStream cryptoStream = new CryptoStream(memoryStream, algorithm.CreateDecryptor(keyAndIvBytes, keyAndIvBytes), CryptoStreamMode.Read))
+                {
+                    using (StreamReader srDecrypt = new StreamReader(cryptoStream))
+                    {
+                        plaintext = srDecrypt.ReadToEnd();
+                    }
+                }
+            }
+
+            return plaintext;
+        }
+
+
+
+username -- B087D00E611ECE1807C94504A6AAA380
+password -- 109E72A3FCD38CCE6967AFF6C9F8A8FE
