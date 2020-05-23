@@ -6,7 +6,7 @@
                                  .ToArray();
 
             string plaintext = string.Empty;
-            Byte[] keyAndIvBytes = UTF8Encoding.UTF8.GetBytes("tR7nR6wZHGjYMCuV");
+            Byte[] keyAndIvBytes = UTF8Encoding.UTF8.GetBytes("tR7nR6");
             RijndaelManaged algorithm = new RijndaelManaged
             {
                 Padding = PaddingMode.PKCS7,
@@ -30,6 +30,3 @@
         }
 
 
-
-username -- B087D00E611ECE1807C94504A6AAA380
-password -- 109E72A3FCD38CCE6967AFF6C9F8A8FE
